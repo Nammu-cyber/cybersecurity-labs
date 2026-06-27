@@ -1,0 +1,37 @@
+<!doctype html><html><head><meta charset='utf-8'><title>Windows Server 2022 - Tomcat 11 con VS Code</title><style>
+:root { --bg:#0f172a; --panel:#111827; --accent:#38bdf8; --accent2:#22c55e; --text:#e5e7eb; --muted:#94a3b8; }
+* { box-sizing: border-box; }
+body { font-family: Arial, Helvetica, sans-serif; margin: 0; color: #111827; line-height: 1.55; background: #fff; }
+.cover { background: linear-gradient(135deg, #0f172a, #111827 55%, #0b3a4a); color: white; padding: 46px 52px; border-radius: 0 0 28px 28px; }
+.cover h1 { margin: 0 0 10px 0; font-size: 34px; letter-spacing: -0.3px; }
+.cover .subtitle { color: #cbd5e1; font-size: 15px; max-width: 780px; }
+.badges { margin-top: 18px; display:flex; gap:8px; flex-wrap:wrap; }
+.badge { display:inline-block; padding:5px 9px; border-radius:999px; background: rgba(56,189,248,.15); color:#dff6ff; border:1px solid rgba(56,189,248,.45); font-size:11px; }
+main { padding: 28px 52px 42px; }
+h2 { color:#0f172a; border-bottom: 2px solid #e5e7eb; padding-bottom: 6px; margin-top: 28px; }
+h3 { color:#164e63; margin-top: 20px; }
+code, pre { font-family: Consolas, Monaco, monospace; }
+pre { background:#0f172a; color:#e5e7eb; border-left:4px solid #38bdf8; padding:14px 16px; border-radius:8px; overflow-wrap:anywhere; white-space:pre-wrap; }
+.table { width:100%; border-collapse: collapse; margin: 12px 0 18px; }
+.table th { background:#f1f5f9; color:#0f172a; text-align:left; }
+.table td, .table th { border:1px solid #e5e7eb; padding:8px 10px; vertical-align:top; }
+.note { border-left:4px solid #22c55e; background:#f0fdf4; padding:12px 14px; border-radius:6px; }
+.warn { border-left:4px solid #f59e0b; background:#fffbeb; padding:12px 14px; border-radius:6px; }
+.evidence img { display:block; width:100%; max-width:780px; border:1px solid #e5e7eb; border-radius:8px; margin:10px 0 20px; box-shadow: 0 1px 5px rgba(15,23,42,.15); }
+ul { padding-left: 22px; }
+.footer { margin-top: 36px; padding-top: 16px; border-top:1px solid #e5e7eb; color:#64748b; font-size:12px; }
+@page { size: A4; margin: 12mm; }
+@media print { .cover { border-radius:0; } main { padding: 20px 28px; } .evidence img { page-break-inside: avoid; } }
+</style></head><body>
+    <div class='cover'><h1>Windows Server 2022 - Tomcat 11 con VS Code</h1><div class='subtitle'>Preparación de Java, integración de Tomcat en VS Code, roles de administración, puertos y despliegue.</div><div class='badges'><span class="badge">Windows Server 2022</span><span class="badge">Tomcat 11</span><span class="badge">VS Code</span><span class="badge">Java 17</span><span class="badge">Servlets</span></div></div>
+    <main>
+    <h2>Entorno</h2><table class='table'><tr><th>Sistema</th><td>Windows Server 2022</td></tr><tr><th>Servidor</th><td>Apache Tomcat 11</td></tr><tr><th>IDE</th><td>Visual Studio Code</td></tr><tr><th>Java</th><td>JDK 17 o superior</td></tr><tr><th>Puerto</th><td>8080</td></tr></table>
+    <h2>Objetivos</h2><ul><li>Preparar Java para Tomcat 11.</li><li>Ejecutar VS Code como administrador para editar XML de configuración.</li><li>Añadir Tomcat desde Community Server Connectors.</li><li>Configurar roles y usuario administrador de Tomcat.</li><li>Gestionar puertos, firewall y despliegues desde VS Code.</li></ul>
+    <h2>Procedimiento resumido</h2><h3>Entorno</h3><p>Se instala Java 17 o superior y se abre VS Code como administrador.</p><h3>Extensión</h3><p>Se instala Community Server Connectors para gestionar Tomcat.</p><h3>Servidor</h3><p>Se añade el servidor apuntando a C:\apache-tomcat-11.0.18.</p><h3>Usuarios</h3><p>Se editan roles en tomcat-users.xml usando credenciales de laboratorio redactadas en el write-up.</p><h3>Puertos y firewall</h3><p>Se valida el puerto 8080, se revisan conflictos con netstat y se permite el tráfico en firewall si es necesario.</p><h3>Despliegue</h3><p>Se arranca Tomcat desde VS Code y se añade el despliegue de la aplicación.</p>
+    <h2>Comandos relevantes</h2><pre>netstat -ano | findstr :8080</pre>
+    <h2>Verificacion</h2><ul><li>Tomcat responde en http://localhost:8080.</li><li>El servidor aparece en la pestaña Servers de VS Code.</li><li>El despliegue se puede añadir desde Add Deployment.</li></ul>
+    <h2>Buenas practicas</h2><ul><li>No usar &lt;TOMCAT_ADMIN_USER&gt;/&lt;TOMCAT_ADMIN_PASSWORD&gt; fuera de laboratorio.</li><li>Limitar roles de administración a los mínimos necesarios.</li><li>No exponer el Manager públicamente.</li><li>Controlar el puerto 8080 en firewall.</li></ul>
+    <h2>Evidencias visuales</h2><p>Capturas del laboratorio renderizadas y preparadas para documentacion tecnica.</p><h3>01 captura pagina 01</h3><div class="evidence"><img src="img/01-captura-pagina-01.png" alt="01 captura pagina 01"></div><h3>02 captura pagina 02</h3><div class="evidence"><img src="img/02-captura-pagina-02.png" alt="02 captura pagina 02"></div>
+    <h2>Conclusiones</h2><p>El laboratorio queda documentado como evidencia de configuracion, administracion y validacion de servicios web en entorno controlado.</p>
+    <div class='footer'>Nammu Labs - uso formativo. Las credenciales reales se reemplazan por placeholders cuando corresponde.</div>
+    </main></body></html>

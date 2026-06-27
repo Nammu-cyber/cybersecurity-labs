@@ -1,0 +1,37 @@
+<!doctype html><html><head><meta charset='utf-8'><title>Windows Server 2022 - Web Deploy para IIS</title><style>
+:root { --bg:#0f172a; --panel:#111827; --accent:#38bdf8; --accent2:#22c55e; --text:#e5e7eb; --muted:#94a3b8; }
+* { box-sizing: border-box; }
+body { font-family: Arial, Helvetica, sans-serif; margin: 0; color: #111827; line-height: 1.55; background: #fff; }
+.cover { background: linear-gradient(135deg, #0f172a, #111827 55%, #0b3a4a); color: white; padding: 46px 52px; border-radius: 0 0 28px 28px; }
+.cover h1 { margin: 0 0 10px 0; font-size: 34px; letter-spacing: -0.3px; }
+.cover .subtitle { color: #cbd5e1; font-size: 15px; max-width: 780px; }
+.badges { margin-top: 18px; display:flex; gap:8px; flex-wrap:wrap; }
+.badge { display:inline-block; padding:5px 9px; border-radius:999px; background: rgba(56,189,248,.15); color:#dff6ff; border:1px solid rgba(56,189,248,.45); font-size:11px; }
+main { padding: 28px 52px 42px; }
+h2 { color:#0f172a; border-bottom: 2px solid #e5e7eb; padding-bottom: 6px; margin-top: 28px; }
+h3 { color:#164e63; margin-top: 20px; }
+code, pre { font-family: Consolas, Monaco, monospace; }
+pre { background:#0f172a; color:#e5e7eb; border-left:4px solid #38bdf8; padding:14px 16px; border-radius:8px; overflow-wrap:anywhere; white-space:pre-wrap; }
+.table { width:100%; border-collapse: collapse; margin: 12px 0 18px; }
+.table th { background:#f1f5f9; color:#0f172a; text-align:left; }
+.table td, .table th { border:1px solid #e5e7eb; padding:8px 10px; vertical-align:top; }
+.note { border-left:4px solid #22c55e; background:#f0fdf4; padding:12px 14px; border-radius:6px; }
+.warn { border-left:4px solid #f59e0b; background:#fffbeb; padding:12px 14px; border-radius:6px; }
+.evidence img { display:block; width:100%; max-width:780px; border:1px solid #e5e7eb; border-radius:8px; margin:10px 0 20px; box-shadow: 0 1px 5px rgba(15,23,42,.15); }
+ul { padding-left: 22px; }
+.footer { margin-top: 36px; padding-top: 16px; border-top:1px solid #e5e7eb; color:#64748b; font-size:12px; }
+@page { size: A4; margin: 12mm; }
+@media print { .cover { border-radius:0; } main { padding: 20px 28px; } .evidence img { page-break-inside: avoid; } }
+</style></head><body>
+    <div class='cover'><h1>Windows Server 2022 - Web Deploy para IIS</h1><div class='subtitle'>Preparación de roles IIS, instalación completa de Web Deploy y exportación/importación de paquetes.</div><div class='badges'><span class="badge">Windows Server 2022</span><span class="badge">IIS</span><span class="badge">Web Deploy</span><span class="badge">MSDeploy</span><span class="badge">Paquetes</span></div></div>
+    <main>
+    <h2>Entorno</h2><table class='table'><tr><th>Sistema</th><td>Windows Server 2022</td></tr><tr><th>Servidor web</th><td>IIS</td></tr><tr><th>Herramienta</th><td>Web Deploy 3.6 o superior</td></tr><tr><th>Servicios</th><td>IIS Management Service / Web Management Service</td></tr><tr><th>Tipo de práctica</th><td>Laboratorio de administración</td></tr></table>
+    <h2>Objetivos</h2><ul><li>Preparar IIS con consola de administración y Management Service.</li><li>Instalar Web Deploy en modo Complete.</li><li>Verificar Web Management Service en estado Running.</li><li>Exportar un sitio o aplicación como paquete ZIP.</li><li>Importar un paquete en un servidor o sitio de destino.</li></ul>
+    <h2>Procedimiento resumido</h2><h3>Roles y características</h3><p>Se habilitan IIS Management Console, Management Service y características de desarrollo de aplicaciones.</p><h3>Instalación</h3><p>Se instala Web Deploy en modo Complete para incluir el handler de IIS.</p><h3>Validación</h3><p>Se comprueba en services.msc que Web Management Service está Running.</p><h3>Exportación</h3><p>Desde IIS Manager se usa Deploy &gt; Export Application para generar un paquete ZIP.</p><h3>Importación</h3><p>En el destino se usa Deploy &gt; Import Application para cargar el ZIP y revisar configuración.</p>
+    <h2>Comandos relevantes</h2><pre>services.msc</pre>
+    <h2>Verificacion</h2><ul><li>El panel de IIS muestra opciones Deploy &gt; Export Application e Import Application.</li><li>El servicio Web Management Service está Running.</li><li>El paquete ZIP generado puede importarse en el destino.</li></ul>
+    <h2>Buenas practicas</h2><ul><li>No habilitar administración remota sin políticas de acceso.</li><li>Usar cuentas dedicadas para despliegue.</li><li>Revisar cadenas de conexión antes de importar.</li><li>Guardar backups antes de sobrescribir sitios.</li></ul>
+    <h2>Evidencias visuales</h2><p>Capturas del laboratorio renderizadas y preparadas para documentacion tecnica.</p><h3>01 captura pagina 01</h3><div class="evidence"><img src="img/01-captura-pagina-01.png" alt="01 captura pagina 01"></div><h3>02 captura pagina 02</h3><div class="evidence"><img src="img/02-captura-pagina-02.png" alt="02 captura pagina 02"></div>
+    <h2>Conclusiones</h2><p>El laboratorio queda documentado como evidencia de configuracion, administracion y validacion de servicios web en entorno controlado.</p>
+    <div class='footer'>Nammu Labs - uso formativo. Las credenciales reales se reemplazan por placeholders cuando corresponde.</div>
+    </main></body></html>
